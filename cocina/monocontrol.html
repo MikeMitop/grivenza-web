@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grivenza — Grifería Premium</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../src/css/styles.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE ANUNCIOS SUPERIOR -->
+    <div class="top-bar">
+        <a href="#contacto">
+            ¿Interesado en compras para tu proyecto o negocio? Contáctanos
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+    </div>
+
+    <!-- NAVBAR PRINCIPAL -->
+    <header id="main-navbar">
+        <div class="container-nav">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <i class="fa-solid fa-droplet"></i>
+                Grivenza<span class="dot">.</span>
+            </div>
+
+            <!-- MENÚ DE NAVEGACIÓN CENTRAL -->
+            <nav class="nav-menu">
+
+                <div class="nav-item">
+                    <a href="#">
+                        Cocina
+                        <i class="fa-solid fa-chevron-down ic-arrow"></i>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <details class="nested-menu">
+                            <summary>
+                                Grifería Lavaplatos
+                                <i class="fa-solid fa-chevron-down ic-arrow"></i>
+                            </summary>
+
+                            <div class="submenu-content">
+                                <a href="#">Agua Fría</a>
+                                <a href="cocina/monocontrol.html">Monocontrol</a>
+                                <a href="#">Extensibles</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#">
+                        Baño
+                        <i class="fa-solid fa-chevron-down ic-arrow"></i>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="#">Lavamanos</a>
+                        <a href="#">Duchas</a>
+                        <a href="#">Accesorios</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#">
+                        Institucional
+                        <i class="fa-solid fa-chevron-down ic-arrow"></i>
+                    </a>
+
+                    <div class="dropdown-content">
+                        <a href="#">Temporizados</a>
+                        <a href="#">Con Sensor</a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#">Repuestos</a>
+                </div>
+
+            </nav>
+
+            <!-- ICONOS DERECHOS -->
+            <div class="nav-actions">
+
+                <button class="action-btn" title="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="action-btn" title="Mi Cuenta">
+                    <i class="fa-regular fa-user"></i>
+                </button>
+
+                <div class="cart-icon-wrap" id="btn-open-cart" title="Carrito de compras">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count">1</span>
+                </div>
+
+                <button
+                    class="hamburger"
+                    id="btn-hamburger"
+                    title="Menú"
+                    aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-title">Grifería Monocontrol</h1>
+    </main>
+
+    <!-- MENÚ MÓVIL -->
+    <div
+        class="mobile-menu"
+        id="mobile-menu"
+        role="dialog"
+        aria-label="Menú de navegación">
+
+        <button
+            class="close-menu"
+            id="btn-close-menu"
+            aria-label="Cerrar menú">
+
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <nav class="mobile-nav">
+
+            <!-- Cocina -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Cocina
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mobile-nav-sub">
+                    <a href="/cocina/monocontrol.html">Monocontrol</a>
+                    <a href="#">Extensibles</a>
+                    <a href="#">Económicos</a>
+                </div>
+            </div>
+
+            <!-- Baño -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Baño
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mobile-nav-sub">
+                    <a href="#">Lavamanos</a>
+                    <a href="#">Duchas</a>
+                    <a href="#">Accesorios</a>
+                </div>
+            </div>
+
+            <!-- Institucional -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Institucional
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="mobile-nav-sub">
+                    <a href="#">Temporizados</a>
+                    <a href="#">Con Sensor</a>
+                </div>
+            </div>
+
+            <!-- Simples -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Bañeras</a>
+            </div>
+
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Vintage</a>
+            </div>
+
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Repuestos</a>
+            </div>
+
+        </nav>
+
+    </div>
+
+    <!-- Overlay -->
+    <div
+        class="mobile-menu-overlay"
+        id="mobile-menu-overlay">
+    </div>
+
+
+
+ 
+
+    <section class="sort-bar">
+        <div class="filter-controls">
+            <span>Filtrar: 
+            </span>
+        </div>
+
+        <div class="sort-controls">
+            <label for="sort-select">Ordenar por: </label>
+            <select id="sort-select">
+                <option value="relevance">Más relevantes</option>
+                <option value="alpha-az">Alfabéticamente, A-Z</option>
+                <option value="alpha-za">Alfabéticamente, Z-A</option>
+                <option value="price-low">Precio: menor a mayor</option>
+                <option value="price-high">Precio: mayor a mayor</option>
+            </select>
+  
+        </div>
+    </section>
+    </main>
+
+    <script>
+
+        /* ── MENÚ MÓVIL (HAMBURGUESA) ───────────────────── */
+
+        const btnHamburger = document.getElementById('btn-hamburger');
+        const btnCloseMenu = document.getElementById('btn-close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        btnHamburger.addEventListener('click', openMobileMenu);
+        btnCloseMenu.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        document.querySelectorAll('.mobile-nav-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                const item = btn.closest('.mobile-nav-item');
+                const isOpen = item.classList.contains('open');
+
+                document
+                    .querySelectorAll('.mobile-nav-item.open')
+                    .forEach(el => el.classList.remove('open'));
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+    </script>
+
+</body>
+</html>
