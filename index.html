@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grivenza — Grifería Premium</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    
+    <!-- Iconos globales de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- ENLACE CORRECTO AL ARCHIVO CSS EN TU CARPETA SRC -->
+    <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
+</head>
+<body>
+
+    <!-- BARRA DE ANUNCIOS SUPERIOR -->
+    <div class="top-bar">
+        <a href="#contacto">¿Interesado en compras para tu proyecto o negocio? Contáctanos <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+
+    <!-- NAVBAR PRINCIPAL -->
+    <header id="main-navbar">
+        <div class="container-nav">
+            
+            <!-- LOGO -->
+            <div class="logo">
+                <i class="fa-solid fa-droplet"></i> Grivenza<span class="dot">.</span>
+            </div>
+
+            <!-- MENÚ DE NAVEGACIÓN CENTRAL -->
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <a href="#">Cocina <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                         <details class="nested-menu">
+                             <summary>Grifería Lavaplatos <i class="fa-solid fa-chevron-down ic-arrow"></i></summary>
+                             <div class="submenu-content">
+                                    <a href="#">Agua Fría</a>
+                                    <a href="cocina/monocontrol.html">Monocontrol</a>
+                                    <a href="#">Extensibles</a>
+                            </div>
+                </details>
+        </div>
+    </div>
+                <div class="nav-item">
+                    <a href="#">Baño <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Lavamanos</a>
+                        <a href="#">Duchas</a>
+                        <a href="#">Accesorios</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Institucional <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Temporizados</a>
+                        <a href="#">Con Sensor</a>
+                    </div>
+                </div>
+  
+                <div class="nav-item"><a href="#">Repuestos</a></div>
+            </nav>
+
+            <!-- ICONOS DE ACCIÓN DERECHOS -->
+            <div class="nav-actions">
+                <button class="action-btn" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="action-btn" title="Mi Cuenta"><i class="fa-regular fa-user"></i></button>
+                <div class="cart-icon-wrap" id="btn-open-cart" title="Carrito de compras">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count">1</span>
+                </div>
+                <!-- BOTÓN HAMBURGUESA (solo visible en móvil) -->
+                <button class="hamburger" id="btn-hamburger" title="Menú" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MENÚ MÓVIL DESLIZANTE -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+        <button class="close-menu" id="btn-close-menu" aria-label="Cerrar menú"><i class="fa-solid fa-xmark"></i></button>
+
+        <nav class="mobile-nav">
+            <!-- Cocina -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Cocina <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="mobile-nav-sub">
+                    <a href="cocina/monocontrol.html">Monocontrol</a>
+                    <a href="#">Extensibles</a>
+                    <a href="#">Económicos</a>
+                </div>
+            </div>
+
+            <!-- Baño -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Baño <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="mobile-nav-sub">
+                    <a href="#">Lavamanos</a>
+                    <a href="#">Duchas</a>
+                    <a href="#">Accesorios</a>
+                </div>
+            </div>
+
+            <!-- Institucional -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">
+                    Institucional <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="mobile-nav-sub">
+                    <a href="#">Temporizados</a>
+                    <a href="#">Con Sensor</a>
+                </div>
+            </div>
+
+            <!-- Ítems simples -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Bañeras</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Vintage</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Repuestos</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Fondo oscuro al abrir el menú -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- SLIDER PRINCIPAL (HERO CAROUSEL) -->
+    <section class="slider-container">
+        <div class="slider-wrapper" id="main-slider">
+            
+            <!-- SLIDE 1: Línea Institucional (Llama a tu foto local en la carpeta img) -->
+            <div class="slide active" style="background-image: url('img/cocina.png');">
+                <div class="slide-content">
+                    <span class="slide-badge">Línea Institucional</span>
+                    <h2>CONTROL TOTAL <br><span class="highlight">SIN CONTACTO</span></h2>
+                    <p class="slide-subtitle">Higiene, resistencia y eficiencia en un solo producto</p>
+                    <ul class="slide-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Activación institucional con el pie o pedal</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ideal para lavamanos en clínicas y restaurantes</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Diseñada para alto tráfico y uso continuo</li>
+                    </ul>
+                    <a href="#catalogo" class="slide-btn">COMPRAR AHORA</a>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: Línea Hogar (Llama a tu foto local en la carpeta img) -->
+            <div class="slide" style="background-image: url('img/llaveBLANCA.png');">
+                <div class="slide-content">
+                    <span class="slide-badge">Línea Hogar</span>
+                    <h2>DISEÑO GOURMET <br><span class="highlight">FLEXIBLE</span></h2>
+                    <p class="slide-subtitle">El corazón de tu cocina merece máxima comodidad</p>
+                    <ul class="slide-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Manguera extensible de alta presión</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Acabado negro mate anti-rayones</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Control monocontrol de temperatura suave</li>
+                    </ul>
+                    <a href="#catalogo" class="slide-btn">VER CATÁLOGO</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Flechas manuales de navegación -->
+        <button class="slider-arrow prev" id="slide-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-arrow next" id="slide-next"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <!-- Puntos indicadores de abajo -->
+        <div class="slider-dots" id="slider-dots">
+            <span class="dot-indicator active" data-index="0"></span>
+            <span class="dot-indicator" data-index="1"></span>
+        </div>
+    </section>
+
+</section>
+<!--CATEGORIAS-->
+    <section class="categories-section">
+    <div class="container-cat">
+        <h2 class="section-title">¿Qué estás buscando hoy? Explora nuestras líneas especializadas</h2>
+        <div class="categories-grid">
+            
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-sink"></i>
+                <span>Cocina</span>
+            </a>
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-bath"></i>
+                <span>Baño</span>
+            </a>
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-building-user"></i>
+                <span>Institucional</span>
+            </a>
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-hot-tub-person"></i>
+                <span>Bañeras</span>
+            </a>
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-clock"></i>
+                <span>Vintage</span>
+            </a>
+            <a href="#" class="cat-card">
+                <i class="fa-solid fa-wrench"></i>
+                <span>Repuestos</span>
+            </a>
+
+        </div>
+    </div>
+
+    <section id="catalogo" class="catalog-section">
+        <div class="container-cat">
+            <h2 class="section-title">Nuestro Catálogo Premium</h2>
+            
+            <div id="product-grid" class="product-grid">
+                </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div id="modal-details-container">
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGICA EN JAVASCRIPT: Controla los tiempos y la interacción del Slider -->
+    <script>
+        /* ── SLIDER ─────────────────────────────────────── */
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot-indicator');
+        const btnPrev = document.getElementById('slide-prev');
+        const btnNext = document.getElementById('slide-next');
+        
+        let currentSlide = 0;
+        let slideInterval;
+        const intervalTime = 5000;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        function startAutoplay() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+
+        btnNext.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+        btnPrev.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.dataset.index);
+                showSlide(index);
+                startAutoplay();
+            });
+        });
+
+        startAutoplay();
+
+        /* ── MENÚ MÓVIL (HAMBURGUESA) ───────────────────── */
+        const btnHamburger   = document.getElementById('btn-hamburger');
+        const btnCloseMenu   = document.getElementById('btn-close-menu');
+        const mobileMenu     = document.getElementById('mobile-menu');
+        const menuOverlay    = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // evita scroll del fondo
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        btnHamburger.addEventListener('click', openMobileMenu);
+        btnCloseMenu.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        /* Acordeón: submenús dentro del menú móvil */
+        document.querySelectorAll('.mobile-nav-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.mobile-nav-item');
+                const isOpen = item.classList.contains('open');
+
+                // Cierra todos los otros abiertos
+                document.querySelectorAll('.mobile-nav-item.open').forEach(el => el.classList.remove('open'));
+
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        /* Cierra el menú si se hace clic en cualquier enlace dentro */
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+
+    <!-- OVERLAY Y PANEL LATERAL DEL CARRITO -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h2>
+            <button id="close-cart-btn" class="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- JS inyectará los productos aquí -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/js/catalogo.js"></script>
+    <script type="module" src="src/js/carrito.js"></script>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" id="contacto">
+        <div class="footer-top">
+            <div class="footer-inner">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo"><i class="fa-solid fa-droplet"></i> Grivenza<span class="dot">.</span></div>
+                    <p class="footer-tagline">Grifería premium para el hogar, la cocina y proyectos institucionales. Calidad que se siente desde el primer uso.</p>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Catálogo</h4>
+                    <ul>
+                        <li><a href="#catalogo">Grifería Cocina</a></li>
+                        <li><a href="#catalogo">Grifería Baño</a></li>
+                        <li><a href="#catalogo">Línea Institucional</a></li>
+                        <li><a href="cocina/monocontrol.html">Monocontrol</a></li>
+                        <li><a href="#catalogo">Extensibles</a></li>
+                        <li><a href="#catalogo">Repuestos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre Grivenza</a></li>
+                        <li><a href="#">Política de garantía</a></li>
+                        <li><a href="#">Política de devoluciones</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Asesoría técnica</a></li>
+                        <li><a href="#">Proyectos especiales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contacto & Ubicación</h4>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i><span>Calle 45 #12-30, Local 8<br>Bogotá, Colombia</span></li>
+                        <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a></li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+5716001234">+57 (1) 600 1234</a></li>
+                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:ventas@grivenza.com">ventas@grivenza.com</a></li>
+                        <li><i class="fa-regular fa-clock"></i><span>Lun – Vie: 8:00 am – 5:30 pm<br>Sáb: 9:00 am – 1:00 pm</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p class="footer-copy">© <span id="year-footer"></span> Grivenza S.A.S. — Todos los derechos reservados.</p>
+                <div class="footer-payment">
+                    <span>Medios de pago:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                    <i class="fa-solid fa-building-columns" title="Transferencia bancaria"></i>
+                    <i class="fa-solid fa-money-bill-wave" title="Efectivo"></i>
+                </div>
+            </div>
+        </div>
+        <script>document.getElementById('year-footer').textContent = new Date().getFullYear();</script>
+    </footer>
+
+</body>
+</html>
