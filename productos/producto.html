@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Producto — Grivenza</title>
+    <meta name="description" id="page-description" content="Grifería premium Grivenza. Calidad, diseño y durabilidad para tu hogar o proyecto.">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Estilos base + producto -->
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <link rel="stylesheet" href="../src/css/producto.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <a href="../index.html#contacto">¿Interesado en compras para tu proyecto o negocio? Contáctanos <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+
+    <!-- NAVBAR -->
+    <header id="main-navbar">
+        <div class="container-nav">
+            <a href="../index.html" class="logo" style="text-decoration:none">
+                <i class="fa-solid fa-droplet"></i> Grivenza<span class="dot">.</span>
+            </a>
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <a href="#">Cocina <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <details class="nested-menu">
+                            <summary>Grifería Lavaplatos <i class="fa-solid fa-chevron-down ic-arrow"></i></summary>
+                            <div class="submenu-content">
+                                <a href="../index.html#catalogo">Agua Fría</a>
+                                <a href="../cocina/monocontrol.html">Monocontrol</a>
+                                <a href="../index.html#catalogo">Extensibles</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Baño <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#catalogo">Lavamanos</a>
+                        <a href="#">Duchas</a>
+                        <a href="#">Accesorios</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Institucional <i class="fa-solid fa-chevron-down ic-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Temporizados</a>
+                        <a href="#">Con Sensor</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="#">Repuestos</a></div>
+            </nav>
+            <div class="nav-actions">
+                <button class="action-btn" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="action-btn" title="Mi Cuenta"><i class="fa-regular fa-user"></i></button>
+                <div class="cart-icon-wrap" id="btn-open-cart" title="Carrito de compras">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <button class="hamburger" id="btn-hamburger" title="Menú" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="btn-close-menu"><i class="fa-solid fa-xmark"></i></button>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">Cocina <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="mobile-nav-sub">
+                    <a href="../cocina/monocontrol.html">Monocontrol</a>
+                    <a href="../index.html#catalogo">Extensibles</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-toggle">Baño <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="mobile-nav-sub">
+                    <a href="../index.html#catalogo">Lavamanos</a>
+                    <a href="#">Duchas</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item"><a href="#" class="mobile-nav-link">Repuestos</a></div>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+            <i class="fa-solid fa-chevron-right sep"></i>
+            <a href="../index.html#catalogo">Catálogo</a>
+            <i class="fa-solid fa-chevron-right sep"></i>
+            <span id="breadcrumb-cat">Producto</span>
+            <i class="fa-solid fa-chevron-right sep"></i>
+            <span id="breadcrumb-name" class="breadcrumb-current">Cargando…</span>
+        </div>
+    </div>
+
+    <!-- ESTADO DE CARGA / ERROR -->
+    <div id="producto-loading" class="prod-loading">
+        <div class="prod-spinner"></div>
+        <p>Cargando producto…</p>
+    </div>
+    <div id="producto-error" class="prod-error" style="display:none">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h2>Producto no encontrado</h2>
+        <p>No pudimos cargar la información de este producto.</p>
+        <a href="../index.html#catalogo" class="btn-back-cat">← Volver al Catálogo</a>
+    </div>
+
+    <!-- CONTENIDO DEL PRODUCTO -->
+    <main id="producto-main" class="producto-main" style="display:none">
+
+        <!-- SECCIÓN PRINCIPAL: GALERÍA + DETALLES -->
+        <section class="prod-hero">
+            <div class="prod-hero-inner">
+
+                <!-- GALERÍA IZQUIERDA -->
+                <div class="prod-gallery">
+                    <div class="prod-gallery-main" id="gallery-main">
+                        <img id="gallery-hero" src="" alt="Producto Grivenza">
+                        <button class="gal-arr gal-prev" id="gal-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="gal-arr gal-next" id="gal-next"><i class="fa-solid fa-chevron-right"></i></button>
+                        <span class="gal-badge-ref" id="gal-ref-badge"></span>
+                        <button class="gal-zoom-btn" id="gal-zoom-btn" title="Ver imagen ampliada">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="prod-thumbs-row" id="prod-thumbs"></div>
+                </div>
+
+                <!-- DETALLES DERECHA -->
+                <div class="prod-details">
+                    <span class="prod-category-tag" id="prod-cat-tag"></span>
+                    <h1 class="prod-name" id="prod-name">Cargando…</h1>
+                    <div class="prod-ref-line">
+                        <i class="fa-solid fa-barcode"></i>
+                        <span id="prod-ref-text"></span>
+                    </div>
+                    <div class="prod-price" id="prod-price"></div>
+                    <div class="prod-stock-info" id="prod-stock-info"></div>
+
+                    <!-- ESPECIFICACIONES -->
+                    <div class="prod-specs-box">
+                        <h3 class="specs-title"><i class="fa-solid fa-list-check"></i> Especificaciones</h3>
+                        <div class="specs-grid" id="specs-grid"></div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <div class="prod-desc" id="prod-desc"></div>
+
+                    <!-- CANTIDAD + CARRITO -->
+                    <div class="prod-buy-row">
+                        <div class="qty-control">
+                            <button class="qty-btn" id="qty-minus"><i class="fa-solid fa-minus"></i></button>
+                            <input type="number" id="qty-input" value="1" min="1" max="999" readonly>
+                            <button class="qty-btn" id="qty-plus"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button class="btn-add-cart" id="btn-add-cart">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+
+                    <!-- EXTRAS: ENVÍO, GARANTÍA, ETC. -->
+                    <div class="prod-perks">
+                        <div class="perk-item">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div>
+                                <strong>Envío a todo Colombia</strong>
+                                <span>Coordinamos la entrega a tu ciudad</span>
+                            </div>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <strong>Garantía de 1 año</strong>
+                                <span>Respaldo total en materiales y mano de obra</span>
+                            </div>
+                        </div>
+                        <div class="perk-item">
+                            <i class="fa-solid fa-headset"></i>
+                            <div>
+                                <strong>Asesoría técnica gratis</strong>
+                                <span>Te guiamos en la instalación</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COMPARTIR -->
+                    <div class="prod-share">
+                        <span>Compartir:</span>
+                        <button class="share-btn" onclick="copiarURL()" title="Copiar enlace"><i class="fa-solid fa-link"></i></button>
+                        <a class="share-btn" id="share-whatsapp" href="#" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTOS RELACIONADOS -->
+        <section class="related-section">
+            <div class="related-inner">
+                <h2 class="related-title">Productos relacionados</h2>
+                <div class="related-grid" id="related-grid"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX (zoom imagen) -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+    </div>
+
+    <!-- BURBUJA POST-CARRITO -->
+    <!-- Se inyecta dinámicamente por JS -->
+
+    <!-- OVERLAY CARRITO LATERAL -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h2>
+            <button id="close-cart-btn" class="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER COMPLETO E-COMMERCE ===== -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-inner">
+
+                <!-- COLUMNA 1: MARCA -->
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-droplet"></i> Grivenza<span class="dot">.</span>
+                    </div>
+                    <p class="footer-tagline">Grifería premium para el hogar, la cocina y proyectos institucionales. Calidad que se siente desde el primer uso.</p>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: CATÁLOGO -->
+                <div class="footer-col">
+                    <h4>Catálogo</h4>
+                    <ul>
+                        <li><a href="../index.html#catalogo">Grifería Cocina</a></li>
+                        <li><a href="../index.html#catalogo">Grifería Baño</a></li>
+                        <li><a href="../index.html#catalogo">Línea Institucional</a></li>
+                        <li><a href="../index.html#catalogo">Monocontrol</a></li>
+                        <li><a href="../index.html#catalogo">Extensibles</a></li>
+                        <li><a href="../index.html#catalogo">Repuestos</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMNA 3: INFORMACIÓN -->
+                <div class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre Grivenza</a></li>
+                        <li><a href="#">Política de garantía</a></li>
+                        <li><a href="#">Política de devoluciones</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Asesoría técnica</a></li>
+                        <li><a href="#">Proyectos especiales</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMNA 4: CONTACTO -->
+                <div class="footer-col footer-contact">
+                    <h4>Contacto & Ubicación</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Calle 45 #12-30, Local 8<br>Bogotá, Colombia</span>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+5716001234">+57 (1) 600 1234</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:ventas@grivenza.com">ventas@grivenza.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Lun – Vie: 8:00 am – 5:30 pm<br>Sáb: 9:00 am – 1:00 pm</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FRANJA DE PAGOS Y COPYRIGHT -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p class="footer-copy">© <span id="year"></span> Grivenza S.A.S. — Todos los derechos reservados.</p>
+                <div class="footer-payment">
+                    <span>Medios de pago:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                    <i class="fa-solid fa-building-columns" title="Transferencia bancaria"></i>
+                    <i class="fa-solid fa-money-bill-wave" title="Efectivo / Contraentrega"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Menú móvil
+        const btnH = document.getElementById('btn-hamburger');
+        const btnCM = document.getElementById('btn-close-menu');
+        const mMenu = document.getElementById('mobile-menu');
+        const mOv = document.getElementById('mobile-menu-overlay');
+        function openMM(){ mMenu.classList.add('active'); mOv.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeMM(){ mMenu.classList.remove('active'); mOv.classList.remove('active'); document.body.style.overflow=''; }
+        btnH?.addEventListener('click', openMM);
+        btnCM?.addEventListener('click', closeMM);
+        mOv?.addEventListener('click', closeMM);
+        document.querySelectorAll('.mobile-nav-toggle').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                const item=btn.closest('.mobile-nav-item');
+                const open=item.classList.contains('open');
+                document.querySelectorAll('.mobile-nav-item.open').forEach(el=>el.classList.remove('open'));
+                if(!open) item.classList.add('open');
+            });
+        });
+        mMenu?.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMM));
+        // Año footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script type="module" src="../src/js/producto.js"></script>
+    <script type="module" src="../src/js/carrito.js"></script>
+
+</body>
+</html>
